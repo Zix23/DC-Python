@@ -1,0 +1,16 @@
+def ktratg(a, b, c):
+    if (a + b > c) and (b + c > a) and (a + c > b):
+        return True
+    else:
+        return False
+    
+print ("Nhap a:")
+a = float(input())
+print ("Nhap b:")
+b = float(input())
+print ("Nhap c:")
+c = float(input())
+if (ktratg(a, b, c)):
+    print ("Ba so a, b, c co tao thanh tam giac")
+else:
+    print ("Ba so a, b, c khong tao thanh tam giac")
