@@ -1,0 +1,12 @@
+def gt(n):
+    if n == 1 or n == 0:
+        return 1
+    else:
+        return n * gt(n-1)
+    
+print ("Nhap n:")
+n = int(input())
+s = 0
+for i in range (n):
+    s += gt(2 * i + 1)
+print ("S =", s)
