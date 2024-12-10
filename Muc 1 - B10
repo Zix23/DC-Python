@@ -1,0 +1,9 @@
+import math
+print("Nhap n:")
+n = int(input())
+print("Nhap x:")
+x = int(input())
+s = 0
+for i in range (n):
+    s += math.pow(x, 0.5)
+print ("S = {0:.3f}".format(s + 1))
