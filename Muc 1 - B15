@@ -1,0 +1,17 @@
+import math
+def gt(n):
+    if n == 1 or n == 0:
+        return 1
+    else:
+        return n * gt(n-1)
+    
+print ("Nhap ep:")
+ep = float(input())
+print ("Nhap x:")
+x = float(input())
+s = 1
+i = 0
+while ( abs(math.pow(x, i) / gt(i)) >= ep ):
+    i += 1
+    s += math.pow(x, i) / gt(i)
+print ("{0:.3f}".format(s))
