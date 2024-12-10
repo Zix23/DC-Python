@@ -1,0 +1,17 @@
+import math
+print("Nhap a1:")
+a1 = float(input())
+print("Nhap b1:")
+b1 = float(input())
+print("Nhap c1:")
+c1 = float(input())
+print("Nhap a2:")
+a2 = float(input())
+print("Nhap b2:")
+b2 = float(input())
+print("Nhap c2:")
+c2 = float(input())
+y = ((a1 * c2) - (a2 * c1)) / ((a1 * b2) - (a2 * b1))
+x = (c1 - (b1 * y)) / a1
+print ("x = {0:.3f}".format(x))
+print ("y = {0:.3f}".format(y))
