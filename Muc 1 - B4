@@ -1,0 +1,28 @@
+import math
+print("Nhap a:")
+a = float(input())
+print("Nhap b:")
+b = float(input())
+print("Nhap c:")
+c = float(input())
+if a == 0:
+    if b == 0:
+        if c == 0:
+            print ("VSN")
+        else:
+            print ("VN")
+    else:
+        x = -c/b
+        print ("x = {0:.3f}".format(x))
+else:
+    delta = b*b - 4*a*c
+    if delta < 0:
+        print ("VN")
+    elif delta == 0:
+        x = -b/(2*a)
+        print ("x = {0:.3f}".format(x))
+    elif delta > 0:
+        x1 = ( -b - math.pow(delta, 0.5) ) / (2*a)
+        x2 = ( -b + math.pow(delta, 0.5) ) / (2*a)
+        print ("x1 = {0:.3f}".format(x1))
+        print ("x2 = {0:.3f}".format(x2))
