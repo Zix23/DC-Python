@@ -1,0 +1,14 @@
+def gt(n):
+    if n == 1 or n == 0:
+        return 1
+    else:
+        return n * gt(n-1)
+    
+print ("Nhap a:")
+a = float(input())
+s = 0
+i = 0
+while (1 / gt(2 * i + 1) >= a):
+    s += 1 / gt(2 * i + 1)
+    i += 1
+print ("S =", s)
