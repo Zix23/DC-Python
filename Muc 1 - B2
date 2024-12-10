@@ -1,0 +1,14 @@
+print("Nhap a:")
+a =float(input())
+print("Nhap b:")
+b = float(input())
+if a == 0:
+    if b == 0:
+        print ("0 > 0 (Vo ly)")
+    elif b > 0:
+        print ("{0} > 0 (Hop Ly)".format(b))
+    elif b < 0:
+        print ("{0} < 0 (Vo Ly)".format(b))
+else:
+    x = -b/a
+    print ("x > {0:.3f}".format(x))
