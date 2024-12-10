@@ -1,0 +1,19 @@
+import math
+def snt(n):
+    if n <= 1:
+        return False
+    elif n == 2:
+        return True
+    elif n % 2 == 0:
+        return False
+    else:
+        for i in range (3, int( math.pow(n, 0.5) ) + 1, 2):
+            if n % i == 0:
+                return False
+        return True
+    
+print ("Nhap n:")
+n = int(input())
+for i in range (1, n+1):
+    if (snt(i)):
+        print (i, end=" ")
