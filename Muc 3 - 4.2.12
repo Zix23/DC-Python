@@ -1,0 +1,6 @@
+import re
+s = input()
+s1 = re.findall(r'\d+', s)
+for i in range (len(s1)):
+    s1[i] = int(s1[i])
+print (sum(s1))
