@@ -1,0 +1,15 @@
+s = input()
+s1 = list(s)
+hoa = 0
+thuong = 0
+so = 0
+for i in s1:
+    if i.isupper():
+        hoa += 1
+    elif i.islower():
+        thuong += 1
+    elif i.isdigit():
+        so += 1
+print ("So chu cai viet hoa:", hoa)
+print ("So chu cai viet thuong:", thuong)
+print ("So chu so:", so)
