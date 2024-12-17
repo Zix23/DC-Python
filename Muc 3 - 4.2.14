@@ -1,0 +1,16 @@
+import re
+s = input()
+s1 = re.findall(r'[a-zA-Z]+|\d+', s)
+b = []
+c = []
+for i in range (len(s1)):
+    if s1[i].isdigit():
+        c.append(i)
+        s1[i] = int(s1[i])
+        b.append(s1[i])
+b.sort()
+for i in range (len(c)):
+    s1[c[i]] = b[i]
+
+for i in s1:
+    print(i, end="")
