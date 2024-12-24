@@ -1,0 +1,25 @@
+class Sach:
+    def __init__(self, ten="", so_trang=0, gia_tien=0.0):
+        self.ten = ten
+        self.so_trang = so_trang
+        self.gia_tien = gia_tien
+
+    def nhap(self):
+        self.ten = input("Nhập tên sách: ")
+        self.so_trang = int(input("Nhập số trang: "))
+        self.gia_tien = float(input("Nhập giá tiền: "))
+
+    def xuat(self):
+        return f"Tên sách: {self.ten}, Số trang: {self.so_trang}, Giá tiền: {self.gia_tien}, Giá tiền trung bình mỗi trang: {self.gia_tien / self.so_trang:.2f}"
+
+n = int(input("Nhập số lượng sách: "))
+danh_sach_sach = []
+for _ in range(n):
+    sach = Sach()
+    sach.nhap()
+    danh_sach_sach.append(sach)
+danh_sach_sach.sort(key=lambda x: x.gia_tien / x.so_trang, reverse=True)
+with open("sach.txt", "w", encoding="utf-8") as file:
+    for sach in danh_sach_sach:
+        file.write(sach.xuat() + "\n")
+print("Xong")
