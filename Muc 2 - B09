@@ -1,0 +1,23 @@
+def c10s16(n):
+    kq = ""
+    while(n!=0):
+        d = n%16
+        if (d == 10):
+            kq = "A" + kq
+        elif (d == 11):
+            kq = "B" + kq
+        elif (d == 12):
+            kq = "C" + kq
+        elif (d == 13):
+            kq = "D" + kq
+        elif (d == 14):
+            kq = "E" + kq
+        elif (d == 15):
+            kq = "F" + kq
+        else:
+            kq = "{0}".format(d) + kq
+        n = n // 16
+    return kq
+
+n = int(input())
+print (c10s16(n))
