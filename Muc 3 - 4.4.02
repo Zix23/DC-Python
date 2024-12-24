@@ -1,0 +1,25 @@
+class Sach:
+    def __init__(self, ten="", trang=0, tien=0.0):
+        self.ten = ten
+        self.trang = trang
+        self.tien = tien
+
+    def nhap(self):
+        self.ten = input("Nhập tên sách: ")
+        self.trang = int(input("Nhập số trang: "))
+        self.tien = float(input("Nhập giá tiền: "))
+
+    def xuat(self):
+        return f"Tên sách: {self.ten}, Số trang: {self.trang}, Giá tiền: {self.tien}, Giá tiền trung bình mỗi trang: {self.tien / self.trang:.2f}"
+
+n = int(input("Nhập số lượng sách: "))
+DS = []
+for _ in range(n):
+    sach = Sach()
+    sach.nhap()
+    DS.append(sach)
+DS.sort(key=lambda x: (x.tien / x.trang, x.ten))
+with open("sach.txt", "w", encoding="utf-8") as file:
+    for sach in DS:
+        file.write(sach.xuat() + "\n")
+print("Xong")
