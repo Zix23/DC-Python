@@ -1,0 +1,13 @@
+m, n = map(int, input().split())
+a = [[0] * n for _ in range(m)]
+for i in range(m):
+    a[i] = list(map(int, input().split()))
+
+co = False
+for i in range(m):
+    if sum(a[i]) % 7 == 0:
+        print(i)
+        co = True
+
+if co == False:
+    print("NO")
