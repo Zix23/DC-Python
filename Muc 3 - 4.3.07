@@ -1,0 +1,16 @@
+n = int(input())
+a = [[0] * n for _ in range(n)]
+for i in range(n):
+    a[i] = list(map(int, input().split()))
+
+tong1 = 0
+tong2 = 0
+
+for i in range(n):
+    tong1 += a[i][i]
+
+for i in range(n-1, -1, -1):
+    tong2 += a[i][i-1]
+
+print (tong1)
+print (tong2)
