@@ -1,0 +1,11 @@
+m, n, k = map(int, input().split())
+a = [[] * n for _ in range(m)]
+for i in range(m):
+    a[i] = list(map(int, input().split()))
+
+dem = 0
+for i in range(m):
+    for j in range (n):
+        if a[i][j] == k:
+            dem += 1
+print (dem)
