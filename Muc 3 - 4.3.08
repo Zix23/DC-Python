@@ -1,0 +1,33 @@
+def upper(a, n):
+    for i in range(1, n):
+        for j in range(0, i):
+            if a[i][j] != 0:
+                return False
+    return True
+
+
+
+def lower(a, n):
+    for i in range(n):
+        for j in range(i+1, n):
+            if a[i][j] != 0:
+                return False
+    return True
+
+n = int(input())
+a = [[0] * n for _ in range(n)]
+for i in range(n):
+    a[i] = list(map(int, input().split()))
+
+kq1 = upper(a, n)
+kq2 = lower(a, n)
+
+
+if kq1 and kq2:
+    print("UPPER & LOWER")
+elif kq1:
+    print("UPPER")
+elif kq2:
+    print("LOWER")
+else:
+    print("NONE")
