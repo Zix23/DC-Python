@@ -1,0 +1,10 @@
+def c10s2(n):
+    kq = ""
+    while(n!=0):
+        d = n%2
+        kq = f"{d}" + kq
+        n = n // 2
+    return kq
+
+n = int(input())
+print (c10s2(n))
