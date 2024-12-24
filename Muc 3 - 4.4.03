@@ -1,0 +1,28 @@
+class Sach:
+    def __init__(self, ten="", trang=0, tien=0.0):
+        self.ten = ten
+        self.trang = trang
+        self.tien = tien
+
+    def xuat(self):
+        return f"Tên sách: {self.ten}, Số trang: {self.trang}, Giá tiền: {self.tien}, Giá tiền trung bình mỗi trang: {self.tien / self.trang:.2f}"
+
+DS = []
+try:
+    with open("sach.txt", "r", encoding="utf-8") as file:
+        lines = file.readlines()
+        for i in range(0, len(lines), 3):
+            ten = lines[i].strip()
+            so_trang = int(lines[i + 1].strip())
+            gia_tien = float(lines[i + 2].strip())
+            sach = Sach(ten, so_trang, gia_tien)
+            DS.append(sach)
+except FileNotFoundError:
+    print("File sach.txt không tồn tại.")
+except Exception as e:
+    print(f"Có lỗi xảy ra: {e}")
+ket_qua = [sach for sach in DS if sach.tien > 100000 and sach.trang < 200]
+with open("ketqua.txt", "w", encoding="utf-8") as file:
+    for sach in ket_qua:
+        file.write(sach.xuat() + "\n")
+    print("Xong")
